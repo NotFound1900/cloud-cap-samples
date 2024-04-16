@@ -10,15 +10,26 @@
     "index.js"
   ],
   "devDependencies": {
-    "@cap-js/sqlite": "*"
+    "@cap-js/sqlite": "*",
+    "@sap/cds-dk": "^7"
   },
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "@sap/xssec": "^3",
+    "@sap/cds-hana": "^2"
   },
   "scripts": {
     "genres": "cds serve test/genres.cds",
     "start": "cds-serve",
     "watch": "cds watch"
+  },
+  "cds": {
+    "requires": {      
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      }
+    }
   }
 }
